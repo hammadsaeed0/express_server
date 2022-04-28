@@ -22,15 +22,25 @@ const thingSchema = new mongoose.Schema({
 });
 
 // Creating Model using Mongoose in Express
-
-const Tank = mongoose.model('Tank', thingSchema);
+  const Tank = mongoose.model('Tank', thingSchema);
 
 // Creating First Document 
 
-const fDoc = new Tank({
-  title: "First Document",
-  userId: 001,
-  price: 1500,
-})
+const addingData = async ()=>{
 
-fDoc.save();
+  try {
+    const fDoc = new Tank({
+      title: "5nd Document",
+      userId: 005,
+      price: 1900,
+    })
+    
+    const checkData = await fDoc.save();
+
+  } catch (error) {
+    console.log(error);
+  }
+
+}
+
+addingData();
